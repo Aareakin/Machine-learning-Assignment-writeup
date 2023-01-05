@@ -47,4 +47,20 @@ The expected out-of-sample error will correspond to the quantity: 1-accuracy in 
 
 Our outcome variable “classe” is a factor variable. We split the Training dataset into TrainTrainingSet and TestTrainingSet datasets
 
+## Installing packages, loading libraries, and setting the seed for reproduceability:
+
+```{r}
+library(lattice)
+library(ggplot2)
+library(caret)
+library(randomForest)
+library(rpart)
+library(rpart.plot)
+library(RColorBrewer)
+library(rattle)
+```
+
+```{r}
+set.seed(1234)
+```
 
