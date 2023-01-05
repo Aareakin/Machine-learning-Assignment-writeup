@@ -450,6 +450,41 @@ cross-validation data set.</p>
 <p>Our outcome variable “classe” is a factor variable. We split the
 Training dataset into TrainTrainingSet and TestTrainingSet datasets</p>
 </div>
+<div id="installing-packages-loading-libraries-and-setting-the-seed-for-reproduceability" class="section level2">
+<h2>Installing packages, loading libraries, and setting the seed for
+reproduceability:</h2>
+<pre class="r"><code>library(lattice)
+library(ggplot2)</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.2.2</code></pre>
+<pre class="r"><code>library(caret)
+library(randomForest)</code></pre>
+<pre><code>## Warning: package &#39;randomForest&#39; was built under R version 4.2.2</code></pre>
+<pre><code>## randomForest 4.7-1.1</code></pre>
+<pre><code>## Type rfNews() to see new features/changes/bug fixes.</code></pre>
+<pre><code>## 
+## Attaching package: &#39;randomForest&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     margin</code></pre>
+<pre class="r"><code>library(rpart)</code></pre>
+<pre><code>## Warning: package &#39;rpart&#39; was built under R version 4.2.2</code></pre>
+<pre class="r"><code>library(rpart.plot)</code></pre>
+<pre><code>## Warning: package &#39;rpart.plot&#39; was built under R version 4.2.2</code></pre>
+<pre class="r"><code>library(RColorBrewer)
+library(rattle)</code></pre>
+<pre><code>## Warning: package &#39;rattle&#39; was built under R version 4.2.2</code></pre>
+<pre><code>## Loading required package: tibble</code></pre>
+<pre><code>## Loading required package: bitops</code></pre>
+<pre><code>## Rattle: A free graphical interface for data science with R.
+## Version 5.5.1 Copyright (c) 2006-2021 Togaware Pty Ltd.
+## Type &#39;rattle()&#39; to shake, rattle, and roll your data.</code></pre>
+<pre><code>## 
+## Attaching package: &#39;rattle&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:randomForest&#39;:
+## 
+##     importance</code></pre>
+<pre class="r"><code>set.seed(1234)</code></pre>
+</div>
 
 
 
