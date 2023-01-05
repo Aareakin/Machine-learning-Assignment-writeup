@@ -450,9 +450,8 @@ cross-validation data set.</p>
 <p>Our outcome variable “classe” is a factor variable. We split the
 Training dataset into TrainTrainingSet and TestTrainingSet datasets</p>
 </div>
-<div id="installing-packages-loading-libraries-and-setting-the-seed-for-reproduceability" class="section level2">
-<h2>Installing packages, loading libraries, and setting the seed for
-reproduceability:</h2>
+<div id="loading-libraries-and-setting-the-seed-for-reproduceability" class="section level2">
+<h2>Loading libraries, and setting the seed for reproduceability:</h2>
 <pre class="r"><code>library(lattice)
 library(ggplot2)</code></pre>
 <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.2.2</code></pre>
@@ -484,6 +483,16 @@ library(rattle)</code></pre>
 ## 
 ##     importance</code></pre>
 <pre class="r"><code>set.seed(1234)</code></pre>
+</div>
+<div id="importing-data-from-url" class="section level2">
+<h2>Importing data from URL</h2>
+<p>The training data set URL:</p>
+<pre class="r"><code>trainUrl &lt;- &quot;http://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&quot;</code></pre>
+<p>The testing data set URL:</p>
+<pre class="r"><code>testUrl &lt;- &quot;http://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv&quot;</code></pre>
+<p>Load data to memory.</p>
+<pre class="r"><code>training &lt;- read.csv(url(trainUrl), na.strings=c(&quot;NA&quot;,&quot;#DIV/0!&quot;,&quot;&quot;))
+testing &lt;- read.csv(url(testUrl), na.strings=c(&quot;NA&quot;,&quot;#DIV/0!&quot;,&quot;&quot;))</code></pre>
 </div>
 
 
