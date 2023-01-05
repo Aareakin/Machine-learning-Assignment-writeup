@@ -47,7 +47,7 @@ The expected out-of-sample error will correspond to the quantity: 1-accuracy in 
 
 Our outcome variable “classe” is a factor variable. We split the Training dataset into TrainTrainingSet and TestTrainingSet datasets
 
-## Installing packages, loading libraries, and setting the seed for reproduceability:
+## Loading libraries, and setting the seed for reproduceability:
 
 ```{r}
 library(lattice)
@@ -62,5 +62,23 @@ library(rattle)
 
 ```{r}
 set.seed(1234)
+```
+
+## Importing data from URL
+The training data set URL:
+
+```{r}
+trainUrl <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+```
+
+The testing data set URL:
+```{r}
+testUrl <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
+```
+
+Load data to memory.
+```{r}
+training <- read.csv(url(trainUrl), na.strings=c("NA","#DIV/0!",""))
+testing <- read.csv(url(testUrl), na.strings=c("NA","#DIV/0!",""))
 ```
 
