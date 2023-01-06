@@ -121,3 +121,11 @@ predictionA <- predict(mymodel, testDataset, type = "class")
 
 rpart.plot(mymodel, main = "classification Tree", extra = 102, under = TRUE, faclen = 0)
 ```
+
+## Testing results on TestDataset data set:
+
+```{r}
+confusionMatrix(predictionA, as.factor(testDataset$classe))
+```
+
+## Prediction 2: Random Forest
