@@ -491,8 +491,27 @@ library(rattle)</code></pre>
 <p>The testing data set URL:</p>
 <pre class="r"><code>testUrl &lt;- &quot;http://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv&quot;</code></pre>
 <p>Load data to memory.</p>
-<pre class="r"><code>training &lt;- read.csv(url(trainUrl), na.strings=c(&quot;NA&quot;,&quot;#DIV/0!&quot;,&quot;&quot;))
-testing &lt;- read.csv(url(testUrl), na.strings=c(&quot;NA&quot;,&quot;#DIV/0!&quot;,&quot;&quot;))</code></pre>
+<pre class="r"><code>training &lt;- read.csv(url(trainUrl), na.strings=c(&quot;NA&quot;,&quot;#DIV/0!&quot;,&quot;&quot;))</code></pre>
+<pre class="r"><code>testing &lt;- read.csv(url(testUrl), na.strings=c(&quot;NA&quot;,&quot;#DIV/0!&quot;,&quot;&quot;))</code></pre>
+<pre class="r"><code>training&lt;-training[,colSums(is.na(training)) == 0]
+testing &lt;-testing[,colSums(is.na(testing)) == 0]</code></pre>
+</div>
+<div id="deleting-irrelevant-columns-columns-1-to-7." class="section level2">
+<h2>Deleting irrelevant columns (columns 1 to 7).</h2>
+<pre class="r"><code>training &lt;-training[,-c(1:7)]
+testing &lt;-testing[,-c(1:7)]</code></pre>
+</div>
+<div id="partition-the-data-so-that-75-of-the-training-dataset-into-training-and-the-remaining-25-to-testing" class="section level2">
+<h2>partition the data so that 75% of the training dataset into training
+and the remaining 25% to testing</h2>
+<pre class="r"><code>traintrain &lt;- createDataPartition(y=training$classe, p=0.75, list=FALSE)
+TrainTraining &lt;- training[traintrain, ] 
+TestTraining &lt;- training[-traintrain, ]</code></pre>
+</div>
+<div id="the-variable-classe-contains-5-levels-a-b-c-d-and-e.-a-plot-of-the-outcome-variable-will-allow-us-to-see-the-frequency-of-each-levels-in-the-traintrainingset-data-set-and-compare-one-another." class="section level2">
+<h2>The variable “classe” contains 5 levels: A, B, C, D and E. A plot of
+the outcome variable will allow us to see the frequency of each levels
+in the TrainTrainingSet data set and # compare one another.</h2>
 </div>
 
 
