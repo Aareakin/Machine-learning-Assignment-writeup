@@ -129,3 +129,13 @@ confusionMatrix(predictionA, as.factor(testDataset$classe))
 ```
 
 ## Prediction 2: Random Forest
+
+```{r}
+mymodel2 <- randomForest(as.factor(classe)~., data = trainingDataset, method = "class")
+
+predictionB <- predict(mymodel2, testDataset, type = "class")
+```
+
+```{r}
+confusionMatrix(predictionB, as.factor(testDataset$classe))
+```
