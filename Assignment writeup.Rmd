@@ -112,5 +112,12 @@ testDataset <- trainingData[-traintestPartition, ]
 
 ```
 
-## The variable "classe" contains 5 levels: A, B, C, D and E. A plot of the outcome variable will allow us to see the frequency of each levels in the TrainTrainingSet data set and # compare one another.
+## Prediction model A: Decision Tree
 
+```{r}
+mymodel <- rpart(classe~., data = trainingDataset, method = "class")
+
+predictionA <- predict(mymodel, testDataset, type = "class")
+
+rpart.plot(mymodel, main = "classification Tree", extra = 102, under = TRUE, faclen = 0)
+```
