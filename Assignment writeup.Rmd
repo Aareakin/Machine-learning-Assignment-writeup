@@ -143,3 +143,10 @@ confusionMatrix(predictionB, as.factor(testDataset$classe))
 ## Decision on best Prediction Model to be use:
 Random Forest algorithm performed better than Decision Trees. Accuracy for Random Forest model was 0.9924 (95% CI: (0.9902, 0.9942)) compared to Decision Tree model with 0.7322 (95% CI: (0.722, 0.742)). The Random Forests model is choosen. The expected out-of-sample error is estimated at 0.005, or 0.5%.
 
+## Final Submission
+The final outcome is based on the Prediction Model 2 (Random Forest) applied against the Testing dataset
+
+```{r}
+finalprediction <- predict(mymodel2, testingData, type = "class")
+finalprediction
+```
