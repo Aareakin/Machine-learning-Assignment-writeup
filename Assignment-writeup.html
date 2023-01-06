@@ -501,9 +501,12 @@ library(rattle)</code></pre>
 <pre class="r"><code>trainingData &lt;- trainingData[ , -c(1:7)]</code></pre>
 <pre class="r"><code>testingData &lt;- testingData[ , -c(1:7)]</code></pre>
 </div>
-<div id="partition-the-data-so-that-75-of-the-training-dataset-into-training-and-the-remaining-25-to-testing" class="section level2">
-<h2>partition the data so that 75% of the training dataset into training
-and the remaining 25% to testing</h2>
+<div id="partition-the-data-so-that-60-of-the-training-dataset-into-training-and-the-remaining-40-to-testing" class="section level2">
+<h2>partition the data so that 60% of the training dataset into training
+and the remaining 40% to testing</h2>
+<pre class="r"><code>traintestPartition &lt;- createDataPartition(y=trainingData$classe, p=0.60, list = FALSE)
+trainingDataset &lt;- trainingData[traintestPartition, ]
+testDataset &lt;- trainingData[-traintestPartition, ]</code></pre>
 </div>
 <div id="the-variable-classe-contains-5-levels-a-b-c-d-and-e.-a-plot-of-the-outcome-variable-will-allow-us-to-see-the-frequency-of-each-levels-in-the-traintrainingset-data-set-and-compare-one-another." class="section level2">
 <h2>The variable “classe” contains 5 levels: A, B, C, D and E. A plot of

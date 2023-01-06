@@ -103,8 +103,14 @@ trainingData <- trainingData[ , -c(1:7)]
 testingData <- testingData[ , -c(1:7)]
 ```
 
-## partition the data so that 75% of the training dataset into training and the remaining 25% to testing
+## partition the data so that 60% of the training dataset into training and the remaining 40% to testing
 
+```{r}
+traintestPartition <- createDataPartition(y=trainingData$classe, p=0.60, list = FALSE)
+trainingDataset <- trainingData[traintestPartition, ]
+testDataset <- trainingData[-traintestPartition, ]
+
+```
 
 ## The variable "classe" contains 5 levels: A, B, C, D and E. A plot of the outcome variable will allow us to see the frequency of each levels in the TrainTrainingSet data set and # compare one another.
 
