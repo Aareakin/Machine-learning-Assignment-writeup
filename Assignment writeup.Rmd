@@ -78,7 +78,17 @@ testUrl <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
 
 Load data to memory.
 ```{r}
-training <- read.csv(url(trainUrl), na.strings=c("NA","#DIV/0!",""))
-testing <- read.csv(url(testUrl), na.strings=c("NA","#DIV/0!",""))
+training <- read.csv(url(trainUrl), na.strings = c("NA", "#DIV/0!", ""))
 ```
+
+```{r}
+test <- read.csv(url(testUrl), na.strings = c("NA", "DIV/0!", ""))
+```
+## Deleting irrelevant columns (columns 1 to 7). 
+
+
+## partition the data so that 75% of the training dataset into training and the remaining 25% to testing
+
+
+## The variable "classe" contains 5 levels: A, B, C, D and E. A plot of the outcome variable will allow us to see the frequency of each levels in the TrainTrainingSet data set and # compare one another.
 
