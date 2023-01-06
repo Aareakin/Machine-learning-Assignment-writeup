@@ -82,10 +82,26 @@ training <- read.csv(url(trainUrl), na.strings = c("NA", "#DIV/0!", ""))
 ```
 
 ```{r}
-test <- read.csv(url(testUrl), na.strings = c("NA", "DIV/0!", ""))
+testing <- read.csv(url(testUrl), na.strings = c("NA", "DIV/0!", ""))
 ```
+
 ## Deleting irrelevant columns (columns 1 to 7). 
 
+```{r}
+trainingData <- training[ , colSums(is.na(training))==0]
+```
+
+```{r}
+testingData <- testing[ , colSums(is.na(testing))==0]
+```
+
+```{r}
+trainingData <- trainingData[ , -c(1:7)]
+```
+
+```{r}
+testingData <- testingData[ , -c(1:7)]
+```
 
 ## partition the data so that 75% of the training dataset into training and the remaining 25% to testing
 
